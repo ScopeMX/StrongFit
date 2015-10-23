@@ -80,6 +80,22 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+# Esto es para hacer la conexion a la base de datos en mysql
+# Es necesario que la base ya se haya creado previamente en mysql
+# para que se logre conectear (solo la base no las tablas)
+# Crear la base con un comando como el siguiente
+# CREATE DATABASE <dbname> CHARACTER SET utf8;
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'strongfitdb',
+#         'USER': 'root',
+#         'PASSWORD': 'n0m3l0',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
 
 
 # Internationalization
