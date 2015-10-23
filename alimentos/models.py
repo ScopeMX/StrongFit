@@ -1,12 +1,12 @@
 from django.db import models
 
 # Create your models here.
-
+# No recuerdo cuales eran los tipos de alimentos, si lo recuerdan porfa cambienlo
 tipo_de_alimento_opciones = (
-    (1, ''),
-    (2, ''),
-    (3, ''),
-    (4, ''),
+    (1, 'tipo1'),
+    (2, 'tipo2'),
+    (3, 'tipo3'),
+    (4, 'tipo4'),
 )
 # Esta es un modelo de prueba si les gusta lo cambiamos a ingles por best practices
 # Hice los campos de esta forma porque asi estan en la base anterior
