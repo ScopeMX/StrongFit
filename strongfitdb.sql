@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `strongfitdb` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `strongfitdb`;
--- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.6.24, for osx10.8 (x86_64)
 --
 -- Host: localhost    Database: strongfitdb
 -- ------------------------------------------------------
--- Server version	5.6.16
+-- Server version	5.6.26
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -115,7 +113,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `content_type_id` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permissi_content_type_id_51277a81_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +122,7 @@ CREATE TABLE `auth_permission` (
 
 LOCK TABLES `auth_permission` WRITE;
 /*!40000 ALTER TABLE `auth_permission` DISABLE KEYS */;
-INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can add permission',2,'add_permission'),(5,'Can change permission',2,'change_permission'),(6,'Can delete permission',2,'delete_permission'),(7,'Can add group',3,'add_group'),(8,'Can change group',3,'change_group'),(9,'Can delete group',3,'delete_group'),(10,'Can add user',4,'add_user'),(11,'Can change user',4,'change_user'),(12,'Can delete user',4,'delete_user'),(13,'Can add content type',5,'add_contenttype'),(14,'Can change content type',5,'change_contenttype'),(15,'Can delete content type',5,'delete_contenttype'),(16,'Can add session',6,'add_session'),(17,'Can change session',6,'change_session'),(18,'Can delete session',6,'delete_session'),(19,'Can add alimento',7,'add_alimento'),(20,'Can change alimento',7,'change_alimento'),(21,'Can delete alimento',7,'delete_alimento');
+INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can add permission',2,'add_permission'),(5,'Can change permission',2,'change_permission'),(6,'Can delete permission',2,'delete_permission'),(7,'Can add group',3,'add_group'),(8,'Can change group',3,'change_group'),(9,'Can delete group',3,'delete_group'),(10,'Can add user',4,'add_user'),(11,'Can change user',4,'change_user'),(12,'Can delete user',4,'delete_user'),(13,'Can add content type',5,'add_contenttype'),(14,'Can change content type',5,'change_contenttype'),(15,'Can delete content type',5,'delete_contenttype'),(16,'Can add session',6,'add_session'),(17,'Can change session',6,'change_session'),(18,'Can delete session',6,'delete_session'),(19,'Can add alimento',7,'add_alimento'),(20,'Can change alimento',7,'change_alimento'),(21,'Can delete alimento',7,'delete_alimento'),(22,'Can add pacient',8,'add_pacient'),(23,'Can change pacient',8,'change_pacient'),(24,'Can delete pacient',8,'delete_pacient'),(25,'Can add nutrician',9,'add_nutrician'),(26,'Can change nutrician',9,'change_nutrician'),(27,'Can delete nutrician',9,'delete_nutrician');
 /*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -237,8 +235,8 @@ CREATE TABLE `django_admin_log` (
   PRIMARY KEY (`id`),
   KEY `django_admin__content_type_id_5151027a_fk_django_content_type_id` (`content_type_id`),
   KEY `django_admin_log_user_id_1c5f563_fk_auth_user_id` (`user_id`),
-  CONSTRAINT `django_admin_log_user_id_1c5f563_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
-  CONSTRAINT `django_admin__content_type_id_5151027a_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
+  CONSTRAINT `django_admin__content_type_id_5151027a_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
+  CONSTRAINT `django_admin_log_user_id_1c5f563_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -264,7 +262,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_3ec8c61c_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -273,7 +271,7 @@ CREATE TABLE `django_content_type` (
 
 LOCK TABLES `django_content_type` WRITE;
 /*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
-INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(7,'alimentos','alimento'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(5,'contenttypes','contenttype'),(6,'sessions','session');
+INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(7,'alimentos','alimento'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(5,'contenttypes','contenttype'),(6,'sessions','session'),(9,'users','nutrician'),(8,'users','pacient');
 /*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -290,7 +288,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -299,7 +297,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2015-10-23 22:30:08.944000'),(2,'auth','0001_initial','2015-10-23 22:30:26.216000'),(3,'admin','0001_initial','2015-10-23 22:30:32.383000'),(4,'alimentos','0001_initial','2015-10-23 22:30:33.132000'),(5,'contenttypes','0002_remove_content_type_name','2015-10-23 22:30:38.362000'),(6,'auth','0002_alter_permission_name_max_length','2015-10-23 22:30:42.136000'),(7,'auth','0003_alter_user_email_max_length','2015-10-23 22:30:51.049000'),(8,'auth','0004_alter_user_username_opts','2015-10-23 22:30:51.139000'),(9,'auth','0005_alter_user_last_login_null','2015-10-23 22:30:52.377000'),(10,'auth','0006_require_contenttypes_0002','2015-10-23 22:30:52.467000'),(11,'sessions','0001_initial','2015-10-23 22:30:53.265000');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2015-10-23 22:30:08.944000'),(2,'auth','0001_initial','2015-10-23 22:30:26.216000'),(3,'admin','0001_initial','2015-10-23 22:30:32.383000'),(4,'alimentos','0001_initial','2015-10-23 22:30:33.132000'),(5,'contenttypes','0002_remove_content_type_name','2015-10-23 22:30:38.362000'),(6,'auth','0002_alter_permission_name_max_length','2015-10-23 22:30:42.136000'),(7,'auth','0003_alter_user_email_max_length','2015-10-23 22:30:51.049000'),(8,'auth','0004_alter_user_username_opts','2015-10-23 22:30:51.139000'),(9,'auth','0005_alter_user_last_login_null','2015-10-23 22:30:52.377000'),(10,'auth','0006_require_contenttypes_0002','2015-10-23 22:30:52.467000'),(11,'sessions','0001_initial','2015-10-23 22:30:53.265000'),(12,'alimentos','0002_auto_20151025_2030','2015-10-25 20:30:37.134990'),(13,'users','0001_initial','2015-10-25 20:30:37.215191');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -328,6 +326,73 @@ LOCK TABLES `django_session` WRITE;
 INSERT INTO `django_session` VALUES ('h5stbuc4nrb0mzxdod8zakzvc6hpddok','MDNkYzJmODA0ZDUyNzg5NzlkYWI2OTRjMWE0MDJiZjdlZjljMzgzMzp7Il9hdXRoX3VzZXJfaGFzaCI6ImIyZmNiZGM0NGM3ZmE1NGM2YTFlZDVkMTJiYmM1MDMzNzU1NGE2NzUiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=','2015-11-06 22:48:41.057000');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `users_nutrician`
+--
+
+DROP TABLE IF EXISTS `users_nutrician`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_nutrician` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `avatar` varchar(100) NOT NULL,
+  `age` int(10) unsigned NOT NULL,
+  `gender` int(10) unsigned NOT NULL,
+  `degree` varchar(255) NOT NULL,
+  `profesionalLicense` varchar(255) NOT NULL,
+  `college` varchar(255) NOT NULL,
+  `userConnect_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `userConnect_id` (`userConnect_id`),
+  CONSTRAINT `users_nutrician_userConnect_id_32d0ddd072caab73_fk_auth_user_id` FOREIGN KEY (`userConnect_id`) REFERENCES `auth_user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users_nutrician`
+--
+
+LOCK TABLES `users_nutrician` WRITE;
+/*!40000 ALTER TABLE `users_nutrician` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users_nutrician` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users_pacient`
+--
+
+DROP TABLE IF EXISTS `users_pacient`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_pacient` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `avatar` varchar(100) NOT NULL,
+  `age` int(10) unsigned NOT NULL,
+  `gender` int(10) unsigned NOT NULL,
+  `weight` double NOT NULL,
+  `height` double NOT NULL,
+  `waist` double NOT NULL,
+  `createdAt` date NOT NULL,
+  `userConnect_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `userConnect_id` (`userConnect_id`),
+  CONSTRAINT `users_pacient_userConnect_id_77d0b8a7d17a4624_fk_auth_user_id` FOREIGN KEY (`userConnect_id`) REFERENCES `auth_user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users_pacient`
+--
+
+LOCK TABLES `users_pacient` WRITE;
+/*!40000 ALTER TABLE `users_pacient` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users_pacient` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'strongfitdb'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -338,4 +403,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-23 17:58:38
+-- Dump completed on 2015-10-25 14:35:25

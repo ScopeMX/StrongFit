@@ -5,7 +5,7 @@
                 <title>{{ projectName }}</title>
         </head>
         <body>
-                <form action="index.html" method="post">
+                <form action="/" method="post">
                         {% csrf_token %}
 			{{ form.as_p }}
                         <input type="submit" name="signUp" value="Join">
