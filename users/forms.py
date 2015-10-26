@@ -26,3 +26,10 @@ class signUp(ModelForm):
             'email': TextInput(attrs={'placeholder':'Correo'}),
             'password': PasswordInput(attrs={'placeholder':'Contraseña'}),
         }
+
+
+class pacientProfileForm(forms.Form):
+    avatar = forms.ImageField(required=False)
+    username = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder':'Nombre de usuario'}))
+    email = forms.EmailField(max_length=255, widget=forms.TextInput(attrs={'placeholder':'Correo'}))
+    age = forms.PositiveIntegerField(default=0)

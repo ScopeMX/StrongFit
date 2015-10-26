@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import signUp
+from .forms import signUp, pacientProfileForm
 from django.views.generic import FormView, TemplateView
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
@@ -24,5 +24,15 @@ class signUpView(FormView):
 
 
 
-class pacientProfile(TemplateView):
+class pacientProfile(FormView):
     template_name = 'pacientProfile.html'
+    form_class =  pacientProfileForm
+    success_url = '/pacientProfile/'
+
+
+class signUpNutrician(TemplateView):
+    template_name = 'signUpNutrician.html'
+
+
+class signIn(FormView):
+    template_name = 'signIn.html'

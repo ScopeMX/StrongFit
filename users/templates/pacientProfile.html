@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
-        <head>
-                <meta charset="utf-8">
-                <title></title>
-        </head>
-        <body>
-                Lel
-        </body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+        <section>
+                <form class="" action="index.html" method="post">
+                        {% csrf_token %}
+                        {% form.as_p %}
+                        <input type="submit" name="update" value="Actualizar">
+                </form>
+        </section>
+{% endblock content %}
