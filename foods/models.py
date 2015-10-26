@@ -3,10 +3,10 @@ from django.db import models
 # Create your models here.
 # No recuerdo cuales eran los tipos de alimentos, si lo recuerdan porfa cambienlo
 type_of_food_options = (
-    (1, 'type1'),
-    (2, 'type2'),
+    (1, 'Vegetable'),
+    (2, 'Animal'),
     (3, 'type3'),
-    (4, 'type4'),
+    (4, 'Legume'),
 )
 class Food(models.Model):
     name = models.CharField(max_length=150, null=True)

@@ -8,7 +8,6 @@ class Pacient(models.Model):
     weight = models.FloatField(default=0)
     height = models.FloatField(default=0)
     waist = models.FloatField(default=0)
-    createdAt = models.DateField(auto_now_add=True)
     userConnect = models.OneToOneField(User)
 
 
@@ -19,5 +18,4 @@ class Nutrician(models.Model):
     degree = models.CharField(max_length=255)
     profesionalLicense = models.CharField(max_length=255)
     college = models.CharField(max_length=255)
-    createdAt = models.DateField(auto_now_add=True)
     userConnect = models.OneToOneField(User)
