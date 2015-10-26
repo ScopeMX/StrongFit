@@ -59,7 +59,9 @@ ROOT_URLCONF = 'strongfitD.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,12 +82,6 @@ WSGI_APPLICATION = 'strongfitD.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 # Esto es para hacer la conexion a la base de datos en mysql
 # Es necesario que la base ya se haya creado previamente en mysql
 # para que se logre conectear (solo la base no las tablas)

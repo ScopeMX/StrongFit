@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
 class signUpView(FormView):
-    template_name = 'index.html'
+    template_name = 'users/index.html'
     form_class = signUp
     success_url = '/pacientProfile/'
 
@@ -25,7 +25,7 @@ class signUpView(FormView):
 
 
 class pacientProfile(FormView):
-    template_name = 'pacientProfile.html'
+    template_name = 'users/pacientProfile.html'
     form_class =  pacientProfileForm
     success_url = '/pacientProfile/'
 
@@ -36,11 +36,11 @@ class pacientProfile(FormView):
 
 
 class signUpNutrician(TemplateView):
-    template_name = 'signUpNutrician.html'
+    template_name = 'users/signUpNutrician.html'
 
 
 class signIn(FormView):
-    template_name = 'signIn.html'
+    template_name = 'users/signIn.html'
     form_class = signInForm
     success_url = '/pacientProfile/'
 
