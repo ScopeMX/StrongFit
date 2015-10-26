@@ -2,6 +2,10 @@
 
 {% block content %}
 <section>
-
+        <form class="" action="/signIn/" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" name="login" value="Entrar">
+        </form>
 </section>
 {% endblock content %}

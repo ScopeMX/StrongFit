@@ -29,7 +29,12 @@ class signUp(ModelForm):
 
 
 class pacientProfileForm(forms.Form):
-    avatar = forms.ImageField(required=False)
-    username = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder':'Nombre de usuario'}))
-    email = forms.EmailField(max_length=255, widget=forms.TextInput(attrs={'placeholder':'Correo'}))
-    age = forms.PositiveIntegerField(default=0)
+    avatar = forms.ImageField(label = False, required=False)
+    username = forms.CharField(label = False, max_length=255, widget=forms.TextInput(attrs={'placeholder':'Nombre de usuario'}))
+    email = forms.EmailField(label = False, max_length=255, widget=forms.TextInput(attrs={'placeholder':'Correo'}))
+    age = forms.CharField(label = False, max_length=255, widget=forms.TextInput(attrs={'placeholder':'Edad'}))
+
+
+class signInForm(forms.Form):
+    userauth = forms.CharField(max_length=255,  widget=forms.TextInput(attrs={'placeholder':'Nombre de usuario o correo'}))
+    password = forms.CharField(max_length=255, widget=forms.PasswordInput(attrs={'placeholder':'Contraseña'}))
