@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request',
                 'users.context_processors.importantdata',
             ],
         },
@@ -85,6 +86,7 @@ WSGI_APPLICATION = 'strongfitD.wsgi.application'
 # Crear la base con un comando como el siguiente
 # CREATE DATABASE <dbname> CHARACTER SET utf8;
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -92,7 +94,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'n0m3l0',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT':'3306',
     }
 }
 

@@ -8,7 +8,6 @@ type_of_food_options = (
     (3, 'type3'),
     (4, 'type4'),
 )
-
 class Food(models.Model):
     name = models.CharField(max_length=150, null=True)
     calories = models.FloatField(null=True)

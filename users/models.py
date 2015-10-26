@@ -19,4 +19,5 @@ class Nutrician(models.Model):
     degree = models.CharField(max_length=255)
     profesionalLicense = models.CharField(max_length=255)
     college = models.CharField(max_length=255)
+    createdAt = models.DateField(auto_now_add=True)
     userConnect = models.OneToOneField(User)

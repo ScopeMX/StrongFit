@@ -5,12 +5,15 @@
                 <title>{{ projectName }}</title>
         </head>
         <body>
-                <form action="index.html" method="post">
+                <a href="/signIn/">Iniciar sesión</a>
+                <form action="/" method="post">
                         {% csrf_token %}
 			{{ form.as_p }}
                         <input type="submit" name="signUp" value="Join">
                 </form>
 
-                {{ projectName }}
+                <p>
+                        ¿Eres un nutriólogo? <a href="/signUpNutrician/">Unete como uno</a>.
+                </p>
         </body>
 </html>
