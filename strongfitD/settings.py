@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'users',
     'foods',
+    'caloriecounter',
 )
 
 MIDDLEWARE_CLASSES = (
