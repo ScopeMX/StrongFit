@@ -23,3 +23,6 @@ class Food(models.Model):
     carbohydrates = models.FloatField(null=True)
     consideration = models.IntegerField(null=True)
     portion = models.IntegerField(default=0)
+
+    def __unicode__(self):
+        return self.name
