@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Pacient(models.Model):
     avatar = models.ImageField(upload_to='avatars')
     age = models.PositiveIntegerField(default=0)

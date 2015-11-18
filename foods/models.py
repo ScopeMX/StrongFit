@@ -1,19 +1,25 @@
 from django.db import models
 
-# Create your models here.
-# No recuerdo cuales eran los tipos de alimentos, si lo recuerdan porfa cambienlo
-type_of_food_options = (
-    (1, 'Vegetable'),
-    (2, 'Animal'),
-    (3, 'type3'),
-    (4, 'Legume'),
-)
+
 class Food(models.Model):
+
+    VEGETABLE_TYPE = 1
+    ANIMAL_TYPE = 2
+    TYPE3_TYPE = 3
+    LEGUME_TYPE = 4
+
+    type_of_food_choices = (
+    (VEGETABLE_TYPE, 'Vegetable'),
+    (ANIMAL_TYPE, 'Animal'),
+    (TYPE3_TYPE, 'type3'),
+    (LEGUME_TYPE, 'Legume'),
+)
+
     name = models.CharField(max_length=150, null=True)
     calories = models.FloatField(null=True)
-    type_of_food = models.IntegerField(null=True, choices=type_of_food_options)
+    type_of_food = models.IntegerField(null=True, choices=type_of_food_choices)
     proteins = models.FloatField(null=True)
-    lipidos = models.FloatField(null=True)
+    lipids = models.FloatField(null=True)
     carbohydrates = models.FloatField(null=True)
     consideration = models.IntegerField(null=True)
     portion = models.IntegerField(default=0)
